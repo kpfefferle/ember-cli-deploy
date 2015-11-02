@@ -358,3 +358,10 @@ Then once the pipeline hook has run, the deployment context will look like this:
 ```
 
 And every pipeline hook run thereafter will be able to access the `uploadedAt` property.
+
+If you find yourself requiring properties from another plugin in the same hook as it was set, you can specify plugin ordering (and thus property availability) in package.json,
+```javascript
+"ember-addon": {
+   after: "ember-cli-deploy-funky-plugin"
+}
+```
